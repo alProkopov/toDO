@@ -32,7 +32,10 @@ function ValueHandler (e) {
     e.preventDefault();
     const titleValue = inputTitle.value
     const bodyValue = inputBody.value
-
+    if (!titleValue||! bodyValue) {
+        alert('введите название и тело задачи')
+        return
+    }
     const newTaskValue = createTask(titleValue,bodyValue);
 
     const newListElement = createLiElement(newTaskValue)
